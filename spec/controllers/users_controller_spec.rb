@@ -55,7 +55,7 @@ describe UsersController do
 		
 	it "should have the right URL for sign up" do
 		get :new
-		response.should have_selector('title', :content => "Sign up")
+		response.should have_selector('title', :content => "Sign Up")
 	end
   end
 end
