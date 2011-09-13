@@ -48,14 +48,14 @@ describe UsersController do
     end
 	
 	it "should have the right title" do
-<<<<<<< HEAD
+
 		get 'new'
 		response.should have_selector('title', :content => "Sign Up")
-=======
+	end
+		
+	it "should have the right URL for sign up" do
 		get :new
 		response.should have_selector('title', :content => "Sign up")
->>>>>>> modeling-users
 	end
   end
-
 end
