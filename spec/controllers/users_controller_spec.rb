@@ -48,14 +48,33 @@ describe UsersController do
     end
 	
 	it "should have the right title" do
-
-		get 'new'
+		get :new
 		response.should have_selector('title', :content => "Sign Up")
 	end
 		
 	it "should have the right URL for sign up" do
 		get :new
 		response.should have_selector('title', :content => "Sign Up")
+	end
+	
+	it "should have a name field" do
+		get :new
+		response.should have_selector("input[name='user[name]'] [type='text']")
+	end
+	
+	it "should have an email field" do
+		get :new
+		response.should have_selector("input[name='user[email]'] [type='text']")
+	end
+	
+	it "should have a password field" do
+		get :new
+		response.should have_selector("input[name='user[password]'] [type='password']")
+	end
+	
+	it "should have a password confirmation field" do
+		get :new
+		response.should have_selector("input[name='user[password_confirmation]'] [type='password']")
 	end
   end
   

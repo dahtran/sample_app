@@ -14,8 +14,12 @@ class UsersController < ApplicationController
 	if @user.save
 		redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }
 	else
+		@user.password = ""
+		@user.password_confirmation = ""
 		@title = "Sign up"
 		render 'new'
 	end
   end
 end
+
+
